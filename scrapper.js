@@ -97,8 +97,8 @@ exports.init = async () => {
 
   // await mongodb.connect(TYPE);
 
-  cron.schedule('45 16 * * *', async () => {
-    console.log('Running this task every day at 16:45h');
+  cron.schedule('0 0 * * *', async () => {
+    console.log('Running this task every day at 00:00h');
     media.movie.data = [];
     media.show.data = [];
     await initByType(moviesUrl, 'movie');
