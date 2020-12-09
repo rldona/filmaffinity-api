@@ -97,13 +97,13 @@ exports.init = async () => {
 
   // await mongodb.connect(TYPE);
 
-  // cron.schedule('45 16 * * *', async () => {
-  // console.log('Running this task every day at 16:45h');
-  // media.movie.data = [];
-  // media.show.data = [];
-  await initByType(moviesUrl, 'movie');
-  await initByType(seriesUrl, 'show');
-  // });
+  cron.schedule('15 20 * * *', async () => {
+    console.log('Running this task every day at 20:15h');
+    media.movie.data = [];
+    media.show.data = [];
+    await initByType(moviesUrl, 'movie');
+    await initByType(seriesUrl, 'show');
+  });
 
   // mongoose.connection.close();
 }
